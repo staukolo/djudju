@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  font-family: 'Georgia', serif;
+  color: #f0f0f0;
+}
+
+#intro-screen, #video-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+
+h1 {
+  font-size: 3em;
+  animation: fadeInScale 2s ease-out;
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+button {
+  margin-top: 20px;
+  background-color: #62ac4e;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  padding: 0.7em 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4b8392;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#subtitle {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-style: italic;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
