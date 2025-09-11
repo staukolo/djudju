@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Totem qui te juge</title>
+  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Page d'intro -->
+  <div id="intro-screen" class="active">
+    <h1>Dju-dju le Totem qui te questionne</h1>
+    <button onclick="startExperience()">Commencer l’expérience</button>
+  </div>
+
+  <!-- Écran vidéo -->
+  <div id="video-screen" style="display:none">
+    <!-- Retrait de "muted" + ajout playsinline pour iOS -->
+    <video id="videoPlayer" autoplay playsinline></video>
+    <p id="subtitle" aria-live="polite"></p>
+
+    <!-- Bouton au cas où l’audio serait encore bloqué par le navigateur -->
+    <button id="sound-btn" onclick="enableAudio()" style="position:absolute;bottom:20px;right:20px;">
+      🔊 Activer le son
+    </button>
+  </div>
+
+  <!-- Écran micro -->
+  <div id="mic-screen" style="display:none">
+    <div class="mic-container">
+      <img src="micro.png" alt="Icône de microphone" class="mic-icon">
+      <p class="mic-text">Réponds à la question…</p>
+      <p class="mic-options">👉 Oui • Non • Peut-être</p>
+    </div>
+  </div>
+
+  <!-- Écran score final -->
+  <div id="score-screen" style="display:none">
+    <h2>🌿 Résultats du Totem 🌿</h2>
+    <table id="score-table">
+      <tr>
+        <th>Catégorie</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Conscience</td>
+        <td id="score-conscience">0</td>
+      </tr>
+      <tr>
+        <td>Indifférence</td>
+        <td id="score-indifference">0</td>
+      </tr>
+      <tr>
+        <td>Réflexion</td>
+        <td id="score-reflexion">0</td>
+      </tr>
+    </table>
+    <p id="score-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
